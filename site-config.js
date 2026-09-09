@@ -23,7 +23,7 @@ const SITE_CONFIG = {
       name: "মাটন কাচ্চি",
       category: "কাচ্চি",
       price: 320,
-      image: "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=900&q=80",
+      image: "https://i.postimg.cc/R0Kx7CMF/1788936979616.jpg",
       description: "সুগন্ধি বাসমতি চাল ও নরম মাটনের ঐতিহ্যবাহী কাচ্চি।",
       available: true,
       badge: "Best Seller",

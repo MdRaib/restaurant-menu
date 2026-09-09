@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#17110d">
+  <meta name="description" content="Restaurant Digital Menu — Order directly from your table via WhatsApp.">
+  <title>ডিজিটাল মেনু</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="menu-header">
+    <div class="header-inner">
+      <a class="brand" href="#menu" aria-label="Home">
+        <img id="navLogo" src="assets/logo.webp" alt="Restaurant logo">
+        <div class="brand-copy">
+          <strong id="brandName">কাচ্চি ভাই</strong>
+          <span id="brandTagline">Taste of Traditional Kacchi</span>
+        </div>
+      </a>
+      <button class="cart-btn" id="openCart" type="button" aria-label="Open cart">
+        <span>🛒</span> কার্ট <b id="cartCount">0</b>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="menu-hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <span class="eyebrow">DIGITAL MENU • ORDER FROM YOUR TABLE</span>
+        <h1>আজ কী খাবেন?</h1>
+        <p>পছন্দের খাবার বেছে নিন, কার্টে যোগ করুন এবং টেবিল থেকেই WhatsApp-এ অর্ডার পাঠান।</p>
+        <a href="#menu" class="hero-btn">মেনু দেখুন ↓</a>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-top">
+        <div>
+          <span class="section-kicker">OUR MENU</span>
+          <h2>পছন্দের খাবার</h2>
+        </div>
+        <div class="category-tabs" id="categoryTabs"></div>
+      </div>
+      <div class="food-grid" id="foodGrid"></div>
+    </section>
+
+    <section class="order-note">
+      <div class="note-icon">⌁</div>
+      <div>
+        <strong>টেবিল থেকেই অর্ডার করুন</strong>
+        <p>কার্টে খাবার যোগ করে আপনার <b>টেবিল নম্বর</b> দিন। অর্ডারটি সরাসরি ম্যানেজারের WhatsApp-এ যাবে।</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="menu-footer">
+    <img src="assets/logo.webp" alt="Logo">
+    <div>
+      <strong id="footerBrand">কাচ্চি ভাই</strong>
+      <span id="footerTagline">Taste of Traditional Kacchi</span>
+    </div>
+    <small>Digital Menu • © <span id="year"></span></small>
+  </footer>
+
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-backdrop" id="closeCart"></div>
+    <aside class="cart-panel">
+      <div class="cart-head">
+        <div><span class="section-kicker">YOUR ORDER</span><h3>আপনার কার্ট</h3></div>
+        <button id="closeCartBtn" type="button" aria-label="Close cart">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div class="summary-line"><span>মোট</span><strong id="cartTotal">৳0</strong></div>
+        <p>অর্ডার পাঠানোর আগে টেবিল নম্বর দিতে হবে।</p>
+        <button id="checkoutBtn" class="primary-btn full-btn" type="button">অর্ডার করতে এগিয়ে যান</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="checkout-modal" id="checkoutModal" aria-hidden="true">
+    <div class="checkout-backdrop" id="closeCheckout"></div>
+    <div class="checkout-card">
+      <div class="checkout-head">
+        <div><span class="section-kicker">ORDER DETAILS</span><h3>অর্ডার পাঠান</h3></div>
+        <button id="closeCheckoutBtn" type="button">×</button>
+      </div>
+      <form id="checkoutForm">
+        <label class="required">টেবিল নম্বর
+          <input name="table" required inputmode="numeric" placeholder="যেমন: ৫" autocomplete="off">
+          <small>আপনি যে টেবিলে বসে আছেন, সেই নম্বরটি লিখুন।</small>
+        </label>
+        <label>আপনার নাম <span class="optional">(ঐচ্ছিক)</span>
+          <input name="name" placeholder="নাম লিখুন" autocomplete="name">
+        </label>
+        <label>মোবাইল নম্বর <span class="optional">(ঐচ্ছিক)</span>
+          <input name="phone" type="tel" inputmode="tel" placeholder="01XXXXXXXXX" autocomplete="tel">
+        </label>
+        <label>অতিরিক্ত নির্দেশনা <span class="optional">(ঐচ্ছিক)</span>
+          <textarea name="note" rows="2" placeholder="যেমন: কম ঝাল, সস আলাদা দিন"></textarea>
+        </label>
+        <div class="checkout-total"><span>অর্ডার মোট</span><strong id="checkoutTotal">৳0</strong></div>
+        <button class="primary-btn full-btn" type="submit">📱 WhatsApp-এ অর্ডার পাঠান</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="site-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
